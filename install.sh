@@ -17,6 +17,7 @@ else
   read -r API_KEY
   echo "export Z_AI_API_KEY=$API_KEY" >> "$SHELL_RC"
   echo "Added Z_AI_API_KEY to $SHELL_RC"
+fi
 
 
 # Move the json files to the correct location
