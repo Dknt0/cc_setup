@@ -12,7 +12,7 @@ SHELL_RC="$HOME/.bashrc"
 if [ "$SHELL" = "/bin/zsh" ] || [ -f "$HOME/.zshrc" ]; then
     SHELL_RC="$HOME/.zshrc"
 fi
-echo "export Z_AI_API_KEY=\"$API_KEY\"" >> "$SHELL_RC"
+echo "export Z_AI_API_KEY=$API_KEY" >> "$SHELL_RC"
 echo "Added Z_AI_API_KEY to $SHELL_RC"
 
 
