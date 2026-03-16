@@ -14,12 +14,15 @@ fi
 echo "export Z_AI_API_KEY=\"$API_KEY\"" >> "$SHELL_RC"
 echo "Added Z_AI_API_KEY to $SHELL_RC"
 
-# Fill the key in settings.json
-sed -i "s/\"ANTHROPIC_AUTH_TOKEN\": \"\"/\"ANTHROPIC_AUTH_TOKEN\": \"$API_KEY\"/" settings.json
-echo "Updated settings.json with API key"
 
 # Move the json files to the correct location
 mkdir -p "$HOME/.claude"
-cp .claude.json "$HOME/.claude/settings.json"
-echo "Copied .claude.json to ~/.claude/settings.json"
+cp settings.json "$HOME/.claude/settings.json"
+echo "Copied settings.json to ~/.claude/settings.json"
 
+# Fill the key in settings.json
+sed -i "s/\"ANTHROPIC_AUTH_TOKEN\": \"\"/\"ANTHROPIC_AUTH_TOKEN\": \"$API_KEY\"/" $HOME/.claude/settings.json
+echo "Updated settings.json with API key"
+
+cp .claude.json "$HOME/.claude.json"
+echo "Copied .claude.json to ~/.claude.json"
