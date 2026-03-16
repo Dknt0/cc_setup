@@ -1,6 +1,7 @@
 #!/bin/sh
 
 npm install -g @anthropic-ai/claude-code
+npm install -g @zed-industries/claude-agent-acp
 
 # Add a API_KEY input here
 echo "Please enter your API key:"
